@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import {Team} from './team'
 import _ from 'lodash'
+import './filters'
 
 require('bootstrap/dist/css/bootstrap.min.css')
 require('bootstrap')
@@ -147,16 +148,7 @@ let appComponent = Vue.extend({
       })
     },
 
-  },
-  filters: {
-    balance(team) {
-      return team.gp - team.ga
-    },
-    ucWords(value) {
-      return value.charAt(0).toUpperCase() + value.slice(1)
-    }
   }
-
 })
 
 
