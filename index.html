@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>test</title>
+</head>
+<body>
+<div id="app" class="container">
+  <div>
+    <h3>Campeonato Brasileiro - Série A - 2018</h3>
+    <br>
+    <br>
+    <div v-if="view == 'table'">
+      <a href="" class="btn btn-primary" @click.prevent="createNewGame">Novo Jogo</a>
+      <br>
+      <br>
+      <input type="text" class="form-control" v-model="filter">
+      <br>
+      <br>
+      <table class="table table-striped">
+        <thead>
+        <th v-for="column in columns">
+          <a @click.prevent="sortBy(column)">{{column | ucWords}}</a>
+        </th>
+
+        </thead>
+        <tbody>
+        <tr v-for="team in teamsFiltered">
+          <td>
+            <img :src="team.shield" alt="" style="width: 30px;">
+            <strong>{{team.name}}</strong></td>
+          <td>{{team.point}}</td>
+          <td>{{team.gp}}</td>
+          <td>{{team.ga}}</td>
+          <td>{{team | balance}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div v-if="view == 'newGame'">
+      <form class="form-inline">
+        <div class="form-group">
+          <input type="text" class="form-control" v-model="newGame.home.goals" @keyup.enter="endGame">
+          <label class="control-label">
+            {{newGame.home.team.name}}
+            <img :src="newGame.home.team.shield" style="height: 30px; width: 30px;">
+          </label>
+        </div>
+        <span>X</span>
+        <div class="form-group">
+          <label class="control-label">
+            <img :src="newGame.visitor.team.shield" style="height: 30px; width: 30px;">
+            {{newGame.visitor.team.name}}
+          </label>
+          <input type="text" class="form-control" v-model="newGame.visitor.goals">
+        </div>
+        <button type="button" class="btn btn-primary" @click="endGame">Fim de jogo</button>
+      </form>
+    </div>
+  </div>
+</div>
+<script src="/dist/build.js"></script>
+</body>
+</html>
+
