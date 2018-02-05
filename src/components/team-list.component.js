@@ -43,8 +43,7 @@ export default {
   },
   methods: {
     showNewGame() {
-      event.$emit('show-new-game')
-      event.$emit('get-teams', this.teams)
+      this.$store.commit('show-team-create')
     },
     sortBy(column) {
       this.order.keys = column

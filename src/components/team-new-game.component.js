@@ -21,6 +21,9 @@ export default {
         </form>
       </div>
   `,
+  mounted() {
+    this.createNewGame(this.$store.state.teams)
+  },
   data() {
     return {
       newGame: {
@@ -37,10 +40,14 @@ export default {
   },
   methods: {
     endGame() {
+      let home = this.newGame.home.team
       let adversary = this.newGame.visitor.team
       let goals = this.newGame.home.goals
       let goalsAdversary = this.newGame.visitor.goals
-      this.newGame.home.team.endGame(adversary, parseInt(goals), parseInt(goalsAdversary))
+      home.endGame(adversary, parseInt(goals), parseInt(goalsAdversary))
+      this.$store.commit('update', home)
+      this.$store.commit('update', adversary)
+      this.$store.commit('show-team-list')
     },
     createNewGame(teams) {
       let indexHome = Math.floor(Math.random() * 20),
