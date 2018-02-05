@@ -1,10 +1,12 @@
 import TeamListComponent from './team-list.component'
 import TeamNewGameComponent from './team-new-game.component'
+import TeamClassificationComponent from './classification-list.component'
 
 export default {
   components: {
     'team-list': TeamListComponent,
-    'team-new-game': TeamNewGameComponent
+    'team-new-game': TeamNewGameComponent,
+    'team-classification': TeamClassificationComponent
   },
   template: `   
     <div>
@@ -16,6 +18,9 @@ export default {
       </div>
       <div v-show="view == 'newGame'">
         <team-new-game></team-new-game>
+      </div>
+      <div v-show="view == 'classification'">
+        <team-classification></team-classification>
       </div>
     </div>
   `,
