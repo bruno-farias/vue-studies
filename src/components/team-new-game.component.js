@@ -1,3 +1,5 @@
+import {Team} from '../team'
+
 export default {
   template: `     
       <div>
@@ -41,10 +43,10 @@ export default {
       let goals = this.newGame.home.goals
       let goalsAdversary = this.newGame.visitor.goals
       this.newGame.home.team.endGame(adversary, goals, goalsAdversary)
-      this.showView('table')
+      this.$parent.showView('table')
 
     },
-    createNewGame() {
+    createNewGame(teams) {
       let indexHome = Math.floor(Math.random() * 20),
         indexVisitor = Math.floor(Math.random() * 20)
 
@@ -52,13 +54,11 @@ export default {
         indexVisitor = Math.floor(Math.random() * 20)
       }
 
-      this.newGame.home.team = this.teams[indexHome]
+      this.newGame.home.team = teams[indexHome]
       this.newGame.home.goals = 0
 
-      this.newGame.visitor.team = this.teams[indexVisitor]
+      this.newGame.visitor.team = teams[indexVisitor]
       this.newGame.visitor.goals = 0
-
-      this.showView('newGame')
     }
   },
   computed: {

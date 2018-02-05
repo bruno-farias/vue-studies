@@ -4,7 +4,7 @@ import _ from 'lodash'
 export default {
   template: `     
     <div>
-      <a href="" class="btn btn-primary" @click.prevent="createNewGame">Novo Jogo</a>
+      <a href="" class="btn btn-primary" @click.prevent="showNewGame">Novo Jogo</a>
       <br>
       <br>
       <input type="text" class="form-control" v-model="filter">
@@ -64,21 +64,9 @@ export default {
     }
   },
   methods: {
-    createNewGame() {
-      let indexHome = Math.floor(Math.random() * 20),
-        indexVisitor = Math.floor(Math.random() * 20)
-
-      if (indexHome === indexVisitor) {
-        indexVisitor = Math.floor(Math.random() * 20)
-      }
-
-      this.newGame.home.team = this.teams[indexHome]
-      this.newGame.home.goals = 0
-
-      this.newGame.visitor.team = this.teams[indexVisitor]
-      this.newGame.visitor.goals = 0
-
-      this.showView('newGame')
+    showNewGame() {
+      this.$parent.showView('newGame')
+      this.$parent.$children[1].createNewGame(this.teams)
     },
     sortBy(column) {
       this.order.keys = column
