@@ -1,4 +1,4 @@
-import {Team} from '../team'
+import event from '../event'
 
 export default {
   template: `     
@@ -23,6 +23,11 @@ export default {
         </form>
       </div>
   `,
+  mounted() {
+    event.$on('get-teams', (teams) => {
+      this.createNewGame(teams)
+    })
+  },
   data() {
     return {
       newGame: {
@@ -42,9 +47,8 @@ export default {
       let adversary = this.newGame.visitor.team
       let goals = this.newGame.home.goals
       let goalsAdversary = this.newGame.visitor.goals
-      this.newGame.home.team.endGame(adversary, goals, goalsAdversary)
-      this.$parent.showView('table')
-
+      this.newGame.home.team.endGame(adversary, parseInt(goals), parseInt(goalsAdversary))
+      event.$emit('show-team-list')
     },
     createNewGame(teams) {
       let indexHome = Math.floor(Math.random() * 20),

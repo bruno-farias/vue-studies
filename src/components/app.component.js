@@ -1,6 +1,6 @@
 import TeamListComponent from './team-list.component'
 import TeamNewGameComponent from './team-new-game.component'
-
+import event from '../event'
 
 export default {
   components : {
@@ -20,6 +20,15 @@ export default {
       </div>
     </div>
   `,
+  mounted() {
+    event.$on('show-team-list', () => {
+      this.view = 'table'
+    })
+
+    event.$on('show-new-game', () => {
+      this.view = 'newGame'
+    })
+  },
   data() {
     return {
       view: 'table'
