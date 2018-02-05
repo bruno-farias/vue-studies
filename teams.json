@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "name": "Palmeiras",
+    "shield": "/dist/assets/palmeiras_60x60.png"
+  },
+  {
+    "id": 2,
+    "name": "Flamengo",
+    "shield": "/dist/assets/flamengo_60x60.png"
+  },
+  {
+    "id": 3,
+    "name": "Atlético-MG",
+    "shield": "/dist/assets/atletico_mg_60x60.png"
+  },
+  {
+    "id": 4,
+    "name": "Santos",
+    "shield": "/dist/assets/santos_60x60.png"
+  },
+  {
+    "id": 5,
+    "name": "Botafogo",
+    "shield": "/dist/assets/botafogo_60x60.png"
+  },
+  {
+    "id": 6,
+    "name": "Atlético-PR",
+    "shield": "/dist/assets/atletico-pr_60x60.png"
+  },
+  {
+    "id": 7,
+    "name": "Corinthians",
+    "shield": "/dist/assets/corinthians_60x60.png"
+  },
+  {
+    "id": 8,
+    "name": "Grêmio",
+    "shield": "/dist/assets/gremio_60x60.png"
+  },
+  {
+    "id": 9,
+    "name": "Fluminense",
+    "shield": "/dist/assets/fluminense_60x60.png"
+  },
+  {
+    "id": 10,
+    "name": "Ponte Preta",
+    "shield": "/dist/assets/ponte_preta_60x60.png"
+  },
+  {
+    "id": 11,
+    "name": "Chapecoense",
+    "shield": "/dist/assets/chapecoense_60x60.png"
+  },
+  {
+    "id": 12,
+    "name": "São Paulo",
+    "shield": "/dist/assets/sao_paulo_60x60.png"
+  },
+  {
+    "id": 13,
+    "name": "Cruzeiro",
+    "shield": "/dist/assets/cruzeiro_60x60.png"
+  },
+  {
+    "id": 14,
+    "name": "Sport",
+    "shield": "/dist/assets/sport_60x60.png"
+  },
+  {
+    "id": 15,
+    "name": "Coritiba",
+    "shield": "/dist/assets/coritiba_60x60.png"
+  },
+  {
+    "id": 16,
+    "name": "Internacional",
+    "shield": "/dist/assets/internacional_60x60.png"
+  },
+  {
+    "id": 17,
+    "name": "Vitória",
+    "shield": "/dist/assets/vitoria_60x60.png"
+  },
+  {
+    "id": 18,
+    "name": "Figueirense",
+    "shield": "/dist/assets/figueirense_60x60.png"
+  },
+  {
+    "id": 19,
+    "name": "Santa Cruz",
+    "shield": "/dist/assets/santa_cruz_60x60.png"
+  },
+  {
+    "id": 20,
+    "name": "América-MG",
+    "shield": "/dist/assets/america_mg_60x60.png"
+  }
+]

@@ -1,12 +1,8 @@
 import _ from 'lodash'
-import event from '../event'
 
 export default {
   template: `     
-    <div>
-      <a href="" class="btn btn-primary" @click.prevent="showNewGame">Novo Jogo</a>
-      <br>
-      <br>
+    <div>     
       <input type="text" class="form-control" v-model="filter">
       <br>
       <br>
@@ -18,7 +14,7 @@ export default {
     
         </thead>
         <tbody>
-        <tr v-for="team in teamsFiltered">
+        <tr v-for="(team, index) in teamsFiltered" :class="{'success' : index < 3 , 'warning' : index >= 3 && index < 6 , 'danger' : index > 15 }">
           <td>
             <img :src="team.shield" alt="" style="width: 30px;">
             <strong>{{team.name}}</strong></td>
@@ -31,6 +27,9 @@ export default {
       </table> 
     </div>    
   `,
+  created() {
+    this.$store.dispatch('set-teams')
+  },
   data() {
     return {
       order: {
@@ -42,9 +41,6 @@ export default {
     }
   },
   methods: {
-    showNewGame() {
-      this.$store.commit('show-team-create')
-    },
     sortBy(column) {
       this.order.keys = column
       this.order.sort = this.order.sort === 'desc' ? 'asc' : 'desc'
